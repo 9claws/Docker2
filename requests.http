@@ -1,0 +1,51 @@
+# примеры API-запросов
+
+@baseUrl = http://91.197.96.240:88/api
+
+# получение датчиков
+GET {{baseUrl}}/sensors/
+Content-Type: application/json
+
+###
+
+# создание датчика
+POST {{baseUrl}}/sensors/
+Content-Type: application/json
+
+{
+  "name": "ESP32",
+  "description": "New sensor"
+}
+
+###
+
+# обновление датчика
+PATCH {{baseUrl}}/sensors/7/
+Content-Type: application/json
+
+{
+  "description": "Перенес датчик на другой балкон"
+}
+
+###
+
+# добавление измерения
+POST {{baseUrl}}/measurements/8/
+Content-Type: application/json
+
+{
+    "temperature": 3.3
+}
+
+###
+
+# получение информации по датчику
+GET {{baseUrl}}/sensors/8/
+Content-Type: application/json
+
+###
+
+# удаление датчика
+DELETE {{baseUrl}}/sensorupdate/8/
+Content-Type: application/json
+
